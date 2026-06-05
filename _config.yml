@@ -1,8 +1,8 @@
 title: "Cyber Corps"
 description: "Спільнота кіберволонтерів"
 telegram_url: "https://t.me/kiberkorpus"
-baseurl: ""
-url: ""
+baseurl: "/cybercorps"
+url: "https://corpus-dev.github.io"
 
 markdown: kramdown
 highlighter: rouge
