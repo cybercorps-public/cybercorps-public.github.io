@@ -1,0 +1,22 @@
+title: "Cyber Corps"
+description: "Спільнота кіберволонтерів"
+telegram_url: "https://t.me/kiberkorpus"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - DEPLOY.md
+  - "*.sh"
+  - vendor/

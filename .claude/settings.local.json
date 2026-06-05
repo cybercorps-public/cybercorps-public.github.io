@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(BUNDLE_GEMFILE=/nonexistent jekyll build)"
+    ]
+  }
+}

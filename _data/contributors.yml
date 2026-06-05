@@ -1,0 +1,44 @@
+# Топ-5 контрибюторів спільноти.
+# Поля: name, handle, contributions (число), servers (число пристроїв),
+#       os (список), avatar (URL або порожньо), link (URL або порожньо)
+# Редагуй цей файл для оновлення списку. Порядок = місце в рейтингу.
+
+- name: "Злий Хацкер"
+  handle: "@ID"
+  contributions: 142
+  servers: 8
+  os: ["Linux", "Windows"]
+  avatar: ""
+  link: ""
+
+- name: "CoolGirl"
+  handle: "@ID"
+  contributions: 98
+  servers: 5
+  os: ["Linux", "macOS"]
+  avatar: ""
+  link: ""
+
+- name: "ShcwineKiller"
+  handle: "@ID"
+  contributions: 87
+  servers: 6
+  os: ["Windows", "Linux"]
+  avatar: ""
+  link: ""
+
+- name: "Trusted Punisher"
+  handle: "@ID"
+  contributions: 64
+  servers: 3
+  os: ["Linux"]
+  avatar: ""
+  link: ""
+
+- name: "Taras Grigorovich"
+  handle: "@andriy_recon"
+  contributions: 51
+  servers: 4
+  os: ["Windows", "Android"]
+  avatar: ""
+  link: ""

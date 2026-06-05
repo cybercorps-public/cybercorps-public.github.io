@@ -1,0 +1,9 @@
+<svg width="52" height="52" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Head -->
+  <rect x="9" y="2" width="6" height="7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" fill="none"/>
+  <!-- Shoulders / body outline -->
+  <path d="M4 22 L4 17 L8 14 L12 15 L16 14 L20 17 L20 22"
+    stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+  <!-- Collar line -->
+  <line x1="4" y1="22" x2="20" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+</svg>
