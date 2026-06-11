@@ -12,46 +12,13 @@ subtitle: Посібники для новачків та досвідчених
 
 <div id="beginners" class="tab-panel active prose" markdown="1">
 
-## СОВА - твій впевнений перший крок (переписати)
-
-Якщо ти щойно приєднався чи приєдналася — починай тут. Не потрібен технічний досвід.
-
-### Крок 1 - налаштовуємо VPN
-
-Для початку налаштовуємо VPN 
-
-> **Правило безпеки:** Використовуй перевірені VPN.
-
-### Крок 1 - Встановлюємо "Сову"
-
-Текст про те як встановити
+{% include tab-beginners.md %}
 
 </div>
 
 <div id="server" class="tab-panel prose" markdown="1">
 
-## CDSS - для твого сервера
-
-CDSS - це Bash-утиліта для встановлення, оновлення та керування набором мережевих інструментів Cyber Corps на Linux. Скрипт визначає дистрибутив, архітектуру та init-систему, встановлює потрібні базові пакети, створює системні служби, веде конфігурацію в одному файлі та надає інтерактивне меню.
-
-### Встановлення
-
-Рекомендований варіант:
-
-```bash
-curl -fsSLo install.sh https://raw.githubusercontent.com/
-# Перегляньте install.sh перед запуском
-sudo bash install.sh
-```
-
-Швидкий варіант:
-
-```bash
-curl -sL https://raw.githubusercontent.com/install.sh | sudo bash -s
-```
-
-> **Примітка:** CDSS можна запускати від `root` без встановленого `sudo`. Якщо ви root — `sudo` не потрібен. Для non-root користувачів потрібен `sudo`.
-
+{% include tab-server.md %}
 
 </div>
 
@@ -59,15 +26,7 @@ curl -sL https://raw.githubusercontent.com/install.sh | sudo bash -s
 
 <div class="individual-intro" markdown="1">
 
-## Індивідальне використання інструментів
-
-Якщо ти вже давно знами, маєш власні погляди на інструменти, і хочеш запускати `mhddos`, `distress` чи `x100` вручну, то ось тобі відповідні гайди
-
-### Крок 1 - налаштовуємо VPN
-
-Для початку налаштовуємо VPN 
-
-> **Правило безпеки:** Використовуй перевірені VPN.
+{% include tab-individual-intro.md %}
 
 </div>
 
@@ -80,49 +39,19 @@ curl -sL https://raw.githubusercontent.com/install.sh | sudo bash -s
 <div id="individual-content" class="tab-panel-container">
   <div id="mhddos" class="tab-panel prose" markdown="1">
 
-### MHDDOS - посібник користувача
-
-Гайд по використанню MHDDOS для запуску атак.
-
-#### Встановлення та налаштування
-
-Опис MHDDOS та як його налаштувати.
-
-#### Приклади використання
-
-Приклади команд для запуску атак.
+{% include tab-mhddos.md %}
 
   </div>
 
   <div id="distress" class="tab-panel prose" markdown="1">
 
-### DISTRESS - посібник користувача
-
-Гайд по використанню DISTRESS для захисту.
-
-#### Встановлення та налаштування
-
-Опис DISTRESS та як його налаштувати.
-
-#### Приклади використання
-
-Приклади команд для запуску захисту.
+{% include tab-distress.md %}
 
   </div>
 
   <div id="x100" class="tab-panel prose" markdown="1">
 
-### X100 - посібник користувача
-
-Гайд по використанню X100 для додаткового захисту.
-
-#### Встановлення та налаштування
-
-Опис X100 та як його налаштувати.
-
-#### Приклади використання
-
-Приклади команд для запуску X100.
+{% include tab-x100.md %}
 
   </div>
 </div>

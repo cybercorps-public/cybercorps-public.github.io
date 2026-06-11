@@ -17,6 +17,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - CLAUDE.md
+  - CONTRIBUTING.md
   - DEPLOY.md
   - "*.sh"
   - vendor/
