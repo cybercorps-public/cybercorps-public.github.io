@@ -31,7 +31,7 @@ subtitle: Посібники для новачків та досвідчених
 </div>
 
 <div class="tabs nested-tabs">
-  <button class="tab-btn" onclick="switchTab(event, 'mhddos')">MHDDOS</button>
+  <button class="tab-btn" onclick="switchTab(event, 'mhddos')">MHDDOS PROXY</button>
   <button class="tab-btn" onclick="switchTab(event, 'distress')">DISTRESS</button>
   <button class="tab-btn" onclick="switchTab(event, 'x100')">X100</button>
 </div>
