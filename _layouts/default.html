@@ -7,40 +7,61 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" sizes="any">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <a href="{{ '/' | relative_url }}" class="site-logo">
-        <span class="logo-icon">{% include icons/logo.svg %}</span>
-        <span class="logo-text">{{ site.title }}</span>
-      </a>
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Головна</a>
-        <a href="{{ '/tools/' | relative_url }}" {% if page.url contains 'tools' %}class="active"{% endif %}>Інструменти</a>
-        <a href="{{ '/contributors/' | relative_url }}" {% if page.url contains 'contributors' %}class="active"{% endif %}>Контрибютори</a>
-        <a href="{{ site.telegram_url }}" class="btn-tg" target="_blank" rel="noopener">
-          {% include icons/telegram.svg %}
+<canvas id="camo-canvas"></canvas>
+<div class="vignette"></div>
+<div class="scanline"></div>
+
+<header class="site-nav">
+  <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — на головну">
+    <svg class="logo-mark" viewBox="0 0 12 12" aria-hidden="true">
+      <!-- pixel crosshair -->
+      <rect x="5" y="0" width="2" height="4" fill="#a3c443"></rect>
+      <rect x="5" y="8" width="2" height="4" fill="#a3c443"></rect>
+      <rect x="0" y="5" width="4" height="2" fill="#a3c443"></rect>
+      <rect x="8" y="5" width="4" height="2" fill="#a3c443"></rect>
+      <rect x="3" y="3" width="6" height="1" fill="#a3c443"></rect>
+      <rect x="3" y="8" width="6" height="1" fill="#a3c443"></rect>
+      <rect x="3" y="3" width="1" height="6" fill="#a3c443"></rect>
+      <rect x="8" y="3" width="1" height="6" fill="#a3c443"></rect>
+      <rect x="5" y="5" width="2" height="2" fill="#e8c63f"></rect>
+    </svg>
+    <span class="logo-text">{{ site.title }}</span>
+  </a>
+  <nav aria-label="Головна навігація">
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Головна</a></li>
+      <li><a href="{{ '/tools/' | relative_url }}" {% if page.url contains 'tools' %}class="active"{% endif %}>Інструменти</a></li>
+      <li><a href="{{ '/contributors/' | relative_url }}" {% if page.url contains 'contributors' %}class="active"{% endif %}>Контрибютори</a></li>
+      <li class="keep">
+        <a class="nav-tg" href="{{ site.telegram_url }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6 18.8 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.6L18.2 6c.4-.3-.1-.5-.6-.2L7.3 12.3 2.9 11c-1-.3-1-1 .2-1.4l17.5-6.7c.8-.3 1.5.2 1.3 1.7z"></path></svg>
           Telegram
         </a>
-      </nav>
-    </div>
-  </header>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="site-main">
-    {{ content }}
-  </main>
+<main id="top">
+  {{ content }}
+</main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Слава Україні &mdash; Слава силам оборони &mdash; <a href="{{ site.telegram_url }}" target="_blank" rel="noopener">Приєднатись до спільноти</a></p>
-    </div>
-  </footer>
+<footer>
+  <span>© 2026 {{ site.title }} · Волонтерська кіберспільнота</span>
+  <div class="footer-links">
+    <a href="{{ site.telegram_url }}" target="_blank" rel="noopener">Telegram</a>
+    <a href="{{ '/' | relative_url }}">Головна</a>
+    <a href="{{ '/tools/' | relative_url }}">Інструменти</a>
+  </div>
+</footer>
 
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
