@@ -467,7 +467,8 @@ h1 .outline {
 
 .tg-inner h2 { margin: 0 auto 16px; }
 .tg-inner .lead { margin: 0 auto; }
-.tg-inner .btn { margin-top: 40px; font-size: 16px; padding: 18px 36px; }
+.tg-cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+.tg-inner .btn { font-size: 16px; padding: 18px 36px; }
 .tg-handle { display: block; margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
 
 /* ---------- footer ---------- */
@@ -658,6 +659,10 @@ footer a:hover { color: var(--yellow); }
 
 .prose a { color: var(--yellow); }
 .prose a:hover { color: var(--acid); text-decoration: underline; }
+.prose .btn { text-decoration: none; }
+.prose .btn-primary, .prose .btn-primary:hover { color: #14130a; }
+.prose .btn-ghost, .prose .btn-ghost:hover { color: var(--acid); }
+.owl-download { display: flex; align-items: center; gap: 16px; margin: 24px 0 32px; flex-wrap: wrap; }
 .prose strong { color: #e6ecd8; font-weight: 600; }
 
 .prose table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9rem; }

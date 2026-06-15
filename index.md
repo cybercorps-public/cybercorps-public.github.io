@@ -147,10 +147,16 @@ title: Головна
     <p class="sec-tag" style="justify-content: center; display: inline-flex;">Канал зв'язку</p>
     <h2>Уся координація — <span class="y">в Telegram</span></h2>
     <p class="lead">Оголошення, оперативні зведення та інструкції для новачків. Підпишись, щоб бути на зв'язку з підрозділом.</p>
-    <a class="btn btn-primary" href="{{ site.telegram_url }}" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6 18.8 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.6L18.2 6c.4-.3-.1-.5-.6-.2L7.3 12.3 2.9 11c-1-.3-1-1 .2-1.4l17.5-6.7c.8-.3 1.5.2 1.3 1.7z"></path></svg>
-      Приєднатися до каналу
-    </a>
+    <div class="tg-cta">
+      <a class="btn btn-primary" href="{{ site.telegram_url }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6 18.8 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.6L18.2 6c.4-.3-.1-.5-.6-.2L7.3 12.3 2.9 11c-1-.3-1-1 .2-1.4l17.5-6.7c.8-.3 1.5.2 1.3 1.7z"></path></svg>
+        Приєднатися до каналу
+      </a>
+      <a class="btn btn-ghost" href="{{ site.baseurl }}/tools">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="6" height="6"/><rect x="9" y="3" width="6" height="6"/><rect x="16" y="3" width="6" height="6"/><rect x="2" y="10" width="6" height="6"/><rect x="9" y="10" width="6" height="6"/><rect x="16" y="10" width="6" height="6"/><rect x="2" y="17" width="6" height="6"/><rect x="9" y="17" width="6" height="6"/><rect x="16" y="17" width="6" height="6"/></svg>
+        Перейти до інструментів
+      </a>
+    </div>
     <span class="tg-handle">t.me/kiberkorpus</span>
   </div>
 </section>

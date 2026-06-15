@@ -18,7 +18,33 @@
 
 ## 1. Процес встановлення {#процес-встановлення}
 
-Завантажити застосунок для своєї платформи можливо за посиланням [github.com/corpus-dev/cyberowl/releases](https://github.com/corpus-dev/cyberowl/releases)
+<div class="owl-download">
+  <a id="owl-dl-btn" class="btn btn-primary" href="https://github.com/corpus-dev/cyberowl/releases/latest">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Завантажити для <span id="owl-os">вашої ОС</span>
+  </a>
+  <a class="btn btn-ghost" href="https://github.com/corpus-dev/cyberowl/releases/latest">Усі платформи</a>
+</div>
+<script>
+(function(){
+  var p = navigator.platform||'', u = navigator.userAgent||'';
+  var base = 'https://github.com/corpus-dev/cyberowl/releases/latest/download/';
+  var btn = document.getElementById('owl-dl-btn');
+  var lbl = document.getElementById('owl-os');
+  var file, os;
+  if (/Win/.test(p)) {
+    file = /arm/i.test(u) ? 'cyberowl-win-arm64.exe' : 'cyberowl-win-x64.exe';
+    os   = /arm/i.test(u) ? 'Windows ARM64' : 'Windows';
+  } else if (/Mac/.test(p)) {
+    file = 'cyberowl-mac-universal.dmg';
+    os   = 'macOS';
+  } else if (/Linux/.test(p)) {
+    file = /arm|aarch64/i.test(u) ? 'cyberowl-linux-arm64.deb' : 'cyberowl-linux-amd64.deb';
+    os   = /arm|aarch64/i.test(u) ? 'Linux ARM64' : 'Linux';
+  }
+  if (file) { btn.href = base + file; lbl.textContent = os; }
+})();
+</script>
 
 1. Перший етап встановлення – Вибір мови
 
