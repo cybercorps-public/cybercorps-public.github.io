@@ -2,7 +2,7 @@ title: "Cyber CORPS"
 description: "Спільнота кіберволонтерів"
 telegram_url: "https://t.me/kiberkorpus"
 baseurl: ""
-url: "https://cybercorps-public.github.io/"
+url: "https://cyber-corps.org/"
 
 markdown: kramdown
 highlighter: rouge
