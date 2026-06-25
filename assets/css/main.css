@@ -117,10 +117,40 @@ main, header.site-nav, footer { position: relative; z-index: 2; }
   text-decoration: none;
   color: var(--text);
   transition: color 0.2s;
+  flex-shrink: 0;
+  width: auto;
 }
 .logo:hover { color: var(--yellow); }
 
-.logo-mark { width: 28px; height: 28px; image-rendering: pixelated; }
+.logo-frame {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+}
+.logo-frame::before,
+.logo-frame::after {
+  content: "";
+  position: absolute;
+  width: 11px; height: 11px;
+  pointer-events: none;
+  opacity: 0.45;
+  transition: opacity 0.25s;
+}
+.logo-frame::before { top: -3px; left: -3px; border-top: 1px solid var(--yellow); border-left: 1px solid var(--yellow); }
+.logo-frame::after  { bottom: -3px; right: -3px; border-bottom: 1px solid var(--yellow); border-right: 1px solid var(--yellow); }
+.logo:hover .logo-frame::before,
+.logo:hover .logo-frame::after { opacity: 1; }
+
+.logo-mark {
+  width: 102px; height: 64px; max-width: 102px;
+  image-rendering: pixelated;
+  filter: saturate(0.8) brightness(0.85);
+  transition: filter 0.25s, width 0.3s, height 0.3s;
+}
+.logo:hover .logo-mark {
+  filter: saturate(1) brightness(1) drop-shadow(0 0 10px rgba(232, 198, 63, 0.55));
+}
+.site-nav.scrolled .logo-mark { width: 64px; height: 40px; max-width: 64px; }
 
 .logo-text {
   font-family: var(--display);
