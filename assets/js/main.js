@@ -175,4 +175,16 @@
       tooltips: { controls: false }
     });
   }
+
+  /* ---------- responsive tables: add data-label to each td ---------- */
+  document.querySelectorAll(".prose table").forEach(function (table) {
+    var headers = Array.from(table.querySelectorAll("thead th")).map(function (th) {
+      return th.textContent.trim();
+    });
+    if (!headers.length) return;
+    table.querySelectorAll("tbody td").forEach(function (td, i) {
+      td.setAttribute("data-label", headers[i % headers.length]);
+    });
+    table.classList.add("responsive-table");
+  });
 })();

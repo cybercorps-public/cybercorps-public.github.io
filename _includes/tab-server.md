@@ -37,11 +37,13 @@ curl -sL https://raw.githubusercontent.com/corpus-dev/CDSS/main/install.sh | sud
 
 Після встановлення:
 
-- робоча директорія: `/opt/cybercorps`
-- команда запуску: `/usr/local/bin/cdss`
-- основна конфігурація: `/opt/cybercorps/services/EnvironmentFile`
-- основний лог для `mhddos` і `distress`: `/var/log/cdss.log`
-- X100-лог: `/opt/cybercorps/x100-for-docker/put-your-ovpn-files-here/x100-log-short.txt`
+<ul class="path-list">
+  <li>робоча директорія: <code>/opt/cybercorps</code></li>
+  <li>команда запуску: <code>/usr/local/bin/cdss</code></li>
+  <li>основна конфігурація: <code>/opt/cybercorps/services/EnvironmentFile</code></li>
+  <li>основний лог для mhddos і distress: <code>/var/log/cdss.log</code></li>
+  <li>X100-лог: <code>/opt/cybercorps/x100-for-docker/put-your-ovpn-files-here/x100-log-short.txt</code></li>
+</ul>
 
 Інсталятор встановлює базові пакети `dialog`, `git`, `curl`, `sudo`, перевіряє/ставить cron-пакет для дистрибутива і клонує репозиторій у `/opt/cybercorps`.
 
@@ -96,9 +98,9 @@ CDSS має чотири основні розділи:
 
 | Інструмент | Підтримка | Що робить CDSS |
 |---|---|---|
-| MHDDOS | `amd64`, `arm64`; не підтримує `386`, `arm32`, Void/runit | Завантажує `mhddos_proxy_linux`, генерує `mhddos.service`, керує запуском, статусом, автозапуском і cron-розкладом. |
-| DISTRESS | `amd64`, `arm64`, `arm32`; systemd/openrc; не підтримує `386` і runit | Завантажує `distress`, генерує `distress.service`, керує запуском, статусом, автозапуском і cron-розкладом. |
-| X100 | Docker + systemd + `amd64`/`arm64` | Встановлює/перевіряє Docker, завантажує `x100-for-docker.tar.gz`, налаштовує `x100-config.txt`, створює `x100.service`, керує запуском, статусом, автозапуском і cron-розкладом. |
+| MHDDOS | amd64, arm64; не підтримує 386, arm32, Void/runit | Завантажує mhddos_proxy_linux, генерує mhddos.service, керує запуском, статусом, автозапуском і cron-розкладом. |
+| DISTRESS | amd64, arm64, arm32; systemd/openrc; не підтримує 386 і runit | Завантажує distress, генерує distress.service, керує запуском, статусом, автозапуском і cron-розкладом. |
+| X100 | Docker + systemd + amd64/arm64 | Встановлює/перевіряє Docker, завантажує x100-for-docker.tar.gz, налаштовує x100-config.txt, створює x100.service, керує запуском, статусом, автозапуском і cron-розкладом. |
 
 Під час запуску одного інструмента CDSS зупиняє інші активні інструменти, щоб одночасно не працювали кілька служб.
 
