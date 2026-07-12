@@ -7,7 +7,7 @@ subtitle: Посібники для новачків та досвідчених
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab(event, 'beginners')"> СОВА - для власних гаджетів та девайсів</button>
   <button class="tab-btn" onclick="switchTab(event, 'server')">CDSS - для серверу</button>
-  <button class="tab-btn" onclick="switchTab(event, 'individual')">Інидивідуальні інструкції</button>
+  <button class="tab-btn" onclick="switchTab(event, 'individual')">Індивідуальні інструкції</button>
 </div>
 
 <div id="beginners" class="tab-panel active prose" markdown="1">
