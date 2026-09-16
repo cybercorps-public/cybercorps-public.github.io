@@ -784,7 +784,66 @@ footer a:hover { color: var(--yellow); }
 /* ── Leaderboard ───────────────────────────────── */
 .leaderboard { display: flex; flex-direction: column; gap: 32px; }
 
-.podium-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* П'єдестал: 2-е ліворуч, 1-е по центру та вище, 3-є праворуч.
+   align-items: end вирівнює низ підставок — різна висота сходинки піднімає картку. */
+.podium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 20px;
+}
+.podium-grid.count-1 { grid-template-columns: minmax(0, 320px); justify-content: center; }
+.podium-grid.count-2 { grid-template-columns: repeat(2, 1fr); max-width: 680px; margin: 0 auto; width: 100%; }
+
+.podium-slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.podium-step {
+  margin-top: -1px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  background: linear-gradient(180deg, var(--bg-2), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  font-family: var(--mono);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--muted);
+}
+
+.podium-slot.place-1 .podium-step {
+  height: 104px;
+  font-size: 2.6rem;
+  color: var(--yellow);
+  border-color: rgba(232, 198, 63, 0.45);
+  background: linear-gradient(180deg, rgba(232, 198, 63, 0.12), rgba(232, 198, 63, 0));
+}
+.podium-slot.place-2 .podium-step {
+  height: 72px;
+  font-size: 2.1rem;
+  color: #a8b8c8;
+  border-color: rgba(168, 184, 200, 0.35);
+  background: linear-gradient(180deg, rgba(168, 184, 200, 0.1), rgba(168, 184, 200, 0));
+}
+.podium-slot.place-3 .podium-step {
+  height: 48px;
+  font-size: 1.75rem;
+  color: #cd7f32;
+  border-color: rgba(205, 127, 50, 0.35);
+  background: linear-gradient(180deg, rgba(205, 127, 50, 0.1), rgba(205, 127, 50, 0));
+}
+
+/* Перше місце — трохи помітніше за сусідів */
+.podium-slot.place-1 .lb-card { padding: 34px 20px 28px; }
+.podium-slot.place-1 .lb-medal { font-size: 3rem; }
+.podium-slot.place-1 .lb-avatar,
+.podium-slot.place-1 .lb-avatar-placeholder { width: 84px; height: 84px; }
 
 .honors-grid {
   display: grid;
@@ -1029,7 +1088,25 @@ footer a:hover { color: var(--yellow); }
 }
 
 @media (max-width: 860px) {
-  .podium-grid { grid-template-columns: 1fr; }
+  /* П'єдестал стає колонкою: 1-е місце зверху, сходинки — тонкі смуги з номером */
+  .podium-grid,
+  .podium-grid.count-1,
+  .podium-grid.count-2 { grid-template-columns: 1fr; max-width: 100%; }
+  .podium-slot.place-1 { order: 1; }
+  .podium-slot.place-2 { order: 2; }
+  .podium-slot.place-3 { order: 3; }
+  .podium-slot.place-1 .podium-step,
+  .podium-slot.place-2 .podium-step,
+  .podium-slot.place-3 .podium-step {
+    height: 38px;
+    font-size: 1.25rem;
+    align-items: center;
+    padding-top: 0;
+  }
+  .podium-slot.place-1 .lb-card { padding: 28px 20px 24px; }
+  .podium-slot.place-1 .lb-medal { font-size: 2.5rem; }
+  .podium-slot.place-1 .lb-avatar,
+  .podium-slot.place-1 .lb-avatar-placeholder { width: 72px; height: 72px; }
   .honors-grid { grid-template-columns: 1fr; max-width: 100%; }
 }
 

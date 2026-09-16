@@ -61,13 +61,14 @@ subtitle: Топ учасників за трафіком — дані онов�
     '<path d="M6 8h7M6 11h4"/><circle cx="18" cy="18" r="3"/>' +
     '<path d="M15.5 20.5L14 23l-1-2-2 1 1.5-2.5"/></svg>';
 
-  function buildCard(user, isPodium) {
+  function buildCard(user, isPodium, place) {
     var tf      = fmtTraffic(user.totalTraffic);
     var tools   = getActiveTools(user.trafficByTool);
     var osList  = getUniqueOS(user.trafficByOs);
+    var rank    = Number(place) || Number(user.rank) || 0;
 
     var icon = isPodium
-      ? '<div class="lb-medal">' + MEDALS[user.rank - 1] + '</div>'
+      ? '<div class="lb-medal">' + (MEDALS[rank - 1] || '') + '</div>'
       : DIPLOMA_SVG;
 
     var toolTags = tools.map(function (t) {
@@ -82,7 +83,7 @@ subtitle: Топ учасників за трафіком — дані онов�
       ? '<div class="lb-os-tags">' + toolTags + osTags + '</div>'
       : '';
 
-    return '<div class="lb-card' + (isPodium ? '' : ' honor') + ' rank-' + user.rank + '">'
+    return '<div class="lb-card' + (isPodium ? '' : ' honor') + ' rank-' + rank + '">'
       + icon
       + '<div class="lb-avatar-placeholder">' + AVATAR_SVG + '</div>'
       + '<div class="lb-name">' + esc(user.login) + '</div>'
@@ -100,15 +101,29 @@ subtitle: Топ учасників за трафіком — дані онов�
       + '</div>';
   }
 
+  // Візуальний порядок п'єдесталу: 2-е місце ліворуч, 1-е в центрі, 3-є праворуч.
+  var PODIUM_ORDER = { 1: [0], 2: [0, 1], 3: [1, 0, 2] };
+
   function render(users) {
     var podium = users.slice(0, 3);
     var honors = users.slice(3);
-    var html = '<div class="podium-grid">'
-      + podium.map(function (u) { return buildCard(u, true); }).join('')
+    var order  = PODIUM_ORDER[podium.length] || [1, 0, 2];
+
+    var html = '<div class="podium-grid count-' + podium.length + '">'
+      + order.map(function (i) {
+          var u = podium[i];
+          if (!u) return '';
+          var place = i + 1;
+          return '<div class="podium-slot place-' + place + '">'
+            +   buildCard(u, true, place)
+            +   '<div class="podium-step"><span class="podium-step-num">' + place + '</span></div>'
+            + '</div>';
+        }).join('')
       + '</div>';
+
     if (honors.length) {
       html += '<div class="honors-grid">'
-        + honors.map(function (u) { return buildCard(u, false); }).join('')
+        + honors.map(function (u, i) { return buildCard(u, false, i + 4); }).join('')
         + '</div>';
     }
     document.getElementById('lb-container').innerHTML = html;
